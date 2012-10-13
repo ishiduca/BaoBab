@@ -31,23 +31,15 @@ var options = {
 var createBaoBab = require('BaoBab');
 var bb           = createBaoBab();
 
-bb.push(function (userid) { // 1st job
+bb.push(function () { // 1st job
     options.path = userid;
     http.request( options, function (res) {
-        if (res.statusCode !== 200) {
-            bb.clear();
-            return console.log('! failed status: "%s"', res.statusCode);
-        }
-        bb.release(); // do 2nd job
+        (res.statusCode !== 200) ? bb.clear() : bb.release();
     });
 }).push(function () { // 2nd job
     options.path = '/friendlist?mode=json';
     http.request( options, function (res) {
-        if (res.statusCode !== 200) {
-            bb.clear();
-            return console.log('! failed status: "%s"', res.statusCode);
-        }
-        bb.release(res); // do 3rd job
+        (res.statusCode !== 200) ? bb.clear() : bb.release();
     });
 }).push(function (res) { // 3rd job
     var data = '';
@@ -62,7 +54,7 @@ bb.push(function (userid) { // 1st job
 })
 ;
 
-bb.release('/account/' + userid); // start. do 1st job
+bb.release(); // start. do 1st job
 ```
 
 ## Method
