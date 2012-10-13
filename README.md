@@ -74,10 +74,11 @@ required callback.
 ### `release(arg1, arg2, ...)`
 
 these arguments are passed as arguments to the callback.
+*when this method is called, calback si executed.*
 
 ### `clear()`
 
-clear the job that hat been left.
+clear the job that has been left.
 
 
 
