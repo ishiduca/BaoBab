@@ -39,7 +39,7 @@ bb.push(function () { // 1st job
 }).push(function () { // 2nd job
     options.path = '/friendlist?mode=json';
     http.request( options, function (res) {
-        (res.statusCode !== 200) ? bb.clear() : bb.release();
+        (res.statusCode !== 200) ? bb.clear() : bb.release(res);
     });
 }).push(function (res) { // 3rd job
     var data = '';
