@@ -4,7 +4,7 @@ a simple FIFO callback dispatcher
 
 ## Usage
 
-### exsample.
+### example.
 
 - 1st. fetch your account
 - 2nd. get friend list json from api.
