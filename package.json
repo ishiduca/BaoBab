@@ -1,0 +1,18 @@
+{
+  "name": "BaoBab",
+  "version": "0.0.0",
+  "description": "a simple FIFO callback dispatcher",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"node t/00.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ishiduca/BaoBab.git"
+  },
+  "keywords": [
+    "jobqueue"
+  ],
+  "author": "ishiduca",
+  "license": "BSD"
+}
